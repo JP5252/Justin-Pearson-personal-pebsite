@@ -44,5 +44,7 @@ flex flex-col gap-4 sm:-gap8 justify-center items-center"
         >
       </a>
     </p>
+    <p></p>
+    <p></p>
   </div>
 </footer>
