@@ -64,7 +64,7 @@
         src={"images/profile.png"}
         alt="Profile image"
         class="object-cover
-		z-[2] max-h-[70vh]"
+		z-[2] max-h-[50vh]"
       />
     </div>
   </section>
