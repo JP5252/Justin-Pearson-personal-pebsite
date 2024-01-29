@@ -33,7 +33,7 @@ flex flex-col gap-4 sm:-gap8 justify-center items-center"
       <a
         class="text-green-400"
         target="_blank"
-        href="www.linkedin.com/in/justin-pearson5252"
+        href="https://linkedin.com/in/justin-pearson5252"
       >
         Justin Pearson<sup
           ><span class="text-xs scale-75 pl-0.5">

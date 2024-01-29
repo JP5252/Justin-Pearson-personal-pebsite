@@ -49,7 +49,7 @@
         class="greenshadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl
       poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white
       text-slate-950"
-        href="www.linkedin.com/in/justin-pearson5252"
+        href="https://linkedin.com/in/justin-pearson5252"
         target="_blank"
       >
         <div

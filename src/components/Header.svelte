@@ -24,7 +24,7 @@
     {/each}
   </div>
   <a
-    href="www.linkedin.com/in/justin-pearson5252"
+    href="https://linkedin.com/in/justin-pearson5252"
     target="_blank"
     class="greenShadow relative overflow-hidden px-5 py-2 group rounded-full
 	bg-white text-slate-950"
