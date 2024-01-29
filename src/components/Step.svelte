@@ -25,9 +25,7 @@ sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"
 	after:h-full after:duration-200 hover:after:translate-x-full after:z-[-1]
 	overflow-hidden"
     >
-      <a target="_blank" href={step.href}>
-        <p class="relative z-4">Go to &rarr;</p>
-      </a>
+      <p class="relative z-4">Go to &rarr;</p>
     </div>
   </div>
 </a>
