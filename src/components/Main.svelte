@@ -2,8 +2,16 @@
   import Step from "./Step.svelte";
 
   let steps = [
-    { name: "C Language Quiz", icon: "fa-solid fa-scroll", href: "" },
-    { name: "Jump Queen", icon: "fa-solid fa-gamepad", href: "" },
+    {
+      name: "C Language Quiz",
+      icon: "fa-solid fa-scroll",
+      href: "https://c-lang-quiz.netlify.app",
+    },
+    {
+      name: "Jump Queen",
+      icon: "fa-solid fa-gamepad",
+      href: "https://github.com/JP5252/Jump-Queen",
+    },
   ];
 
   let benefits = [
@@ -86,7 +94,7 @@
 	  hover:border-green-700 duration-200"
     >
       <i class="fa-brands fa-github"></i>
-      <p>Check this out!</p>
+      <p>All Repositories</p>
     </a>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10">
       <Step step={steps[0]}>
