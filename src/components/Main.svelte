@@ -46,7 +46,7 @@
         <span class="poppins text-green-400">April 2024!</span>
       </p>
       <a
-        class="greenshadow mx-auto lg:mr-auto text-base sm:text-lg md:text-xl
+        class="greenshadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl
       poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white
       text-slate-950"
         href="www.linkedin.com/in/justin-pearson5252"
