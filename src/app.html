@@ -47,6 +47,8 @@
 
 		let pointerX,
 			pointerY;
+		
+		let scrollY = 0;
 
 		let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 
@@ -61,6 +63,7 @@
 		document.ontouchmove = onTouchMove;
 		document.ontouchend = onMouseLeave;
 		document.onmouseleave = onMouseLeave;
+		document.onscroll = onScroll;
 
 		function generate() {
 
@@ -252,6 +255,14 @@
 		pointerY = null;
 
 		}
+
+		function onScroll() {
+			const newScrollY = window.scrollY;
+			const scrollDelta = newScrollY - scrollY;
+
+			velocity.ty -= scrollDelta * 0.1; // Adjust the multiplier based on the scroll speed sensitivity
+			scrollY = newScrollY;
+ 		}
 
 		</script>
 		<div style="display: contents" class="relative
