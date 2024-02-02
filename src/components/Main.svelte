@@ -85,7 +85,7 @@
     <div class="relative grid place-items-center">
       <img
         src={"images/profile.png"}
-        alt="Profile image"
+        alt="Profile"
         class="object-cover
 		z-[2] max-h-[50vh]"
       />
