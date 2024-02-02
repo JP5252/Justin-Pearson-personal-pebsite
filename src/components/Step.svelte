@@ -23,9 +23,11 @@ sm:-mt-12 md:-mt-14 lg:-mt-16 mx-auto duration-200"
     relative after:absolute after:top-0 after:h-0 after:right-full
     after:bg-white after:w-full
 	after:h-full after:duration-200 hover:after:translate-x-full after:z-[-1]
-	overflow-hidden"
+	overflow-hidden rounded"
     >
-      <p class="relative z-4">Go to &rarr;</p>
+      <p class="relative z-4">
+        Go to &rarr; <i class="fa-brands fa-github" />
+      </p>
     </div>
   </div>
 </a>

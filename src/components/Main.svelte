@@ -101,7 +101,7 @@
       <i class="fa-brands fa-github"></i>
       <p>All Repositories</p>
     </a>
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
           I learned <strong class="text-green-400">web scraping</strong> to get
