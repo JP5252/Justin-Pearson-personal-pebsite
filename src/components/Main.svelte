@@ -3,6 +3,11 @@
 
   let steps = [
     {
+      name: "NFL Data Scraping",
+      icon: "fa-solid fa-football",
+      href: "https://github.com/JP5252/NFL-Data-Scraping",
+    },
+    {
       name: "C Language Quiz",
       icon: "fa-solid fa-scroll",
       href: "https://c-lang-quiz.netlify.app",
@@ -26,7 +31,7 @@
         "One of my favourite things to do is solve problems, and anyone who has ever attempted to code, knows how many problems you have got to solve. Whether its a layout not displaying how it should or a calculation going awry, I'm always willing to accept the challenge.",
     },
     {
-      name: "Team Player",
+      name: "A Team Player",
       description:
         "Growing up I played a number of team sports including football, lacrosse, basketball and rugby and I now coach football as well. From my time around all those sports I learned the importance teamwork. If everyone communicates effectively, is accountable for their own jobs, and trusts eachother, then the team will prosper and achieve their goals.",
     },
@@ -96,13 +101,13 @@
       <i class="fa-brands fa-github"></i>
       <p>All Repositories</p>
     </a>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
-          The C language quiz that will test your knowledge on the C programming
-          language, this was my <strong class="text-green-400"
-            >first React app!</strong
-          >
+          I learned <strong class="text-green-400">web scraping</strong> to get
+          nfl data so that I can get better projections for next years NFL
+          season. This work in progress is going to help me win my
+          <strong class="text-green-400">fantasy football</strong> leagues next year!
         </p>
       </Step>
       <Step step={steps[1]}>
@@ -110,6 +115,14 @@
           <strong class="text-green-400">Jump Queen</strong> is a 2D game I am
           currently working on in <strong class="text-green-400">Unity</strong> for
           a class at school, taking inspiration from the game jump king!
+        </p>
+      </Step>
+      <Step step={steps[2]}>
+        <p>
+          The C language quiz that will test your knowledge on the C programming
+          language, this was my <strong class="text-green-400"
+            >first React app!</strong
+          >
         </p>
       </Step>
     </div>
