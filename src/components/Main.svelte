@@ -8,14 +8,14 @@
       href: "https://github.com/JP5252/NFL-Data-Scraping",
     },
     {
-      name: "C Language Quiz",
-      icon: "fa-solid fa-scroll",
-      href: "https://github.com/JP5252/quiz-app",
-    },
-    {
       name: "Jump Queen",
       icon: "fa-solid fa-gamepad",
       href: "https://github.com/JP5252/Jump-Queen",
+    },
+    {
+      name: "C Language Quiz",
+      icon: "fa-solid fa-scroll",
+      href: "https://github.com/JP5252/quiz-app",
     },
   ];
 
