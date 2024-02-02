@@ -49,7 +49,7 @@
 					gap-6 md:gap-8 lg:gap-10"
     >
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-        Hi! I'm <span class="poppins text-green-400">Justin</span>
+        <span class="poppins text-green-400">Justin</span>
         Pearson <br /> Aspiring
         <span class="poppins text-green-400">Developer</span>
       </h2>
