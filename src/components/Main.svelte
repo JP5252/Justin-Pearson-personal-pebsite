@@ -50,14 +50,24 @@
     >
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
         Hi! I'm <span class="poppins text-green-400">Justin</span>
-        Pearson <br /> Computer Science
-        <span class="poppins text-green-400">Student</span>
+        Pearson <br /> Aspiring
+        <span class="poppins text-green-400">Developer</span>
       </h2>
-      <p class="text-base sm:text-lg md:text-xl">
-        My <span class="poppins text-green-400">favourite languages</span> are
-        javascript, python and C! I am Graduating from MacEwan University in
+      <p class="text-base sm:text-xl md:text-2xl">
+        Graduating from MacEwan University in
         <span class="poppins text-green-400">April 2024!</span>
       </p>
+      <p class="text-base sm:text-lg md:text-xl">
+        My <span class="poppins text-green-400">favourite languages</span> are javascript,
+        python and C!
+      </p>
+      <p class="text-base sm:text-lg md:text-xl">
+        I am open to working in any development stream <span
+          class="poppins
+        text-green-400">web or software</span
+        >, games or otherwise!
+      </p>
+
       <a
         class="greenshadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl
       poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white
@@ -84,11 +94,9 @@
 
   <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
     <div class="flex flex-col gap-2 text-center">
-      <h6 class="text-lg sm:text-xl md:text-2xl">
-        A few of my learning projects.
-      </h6>
       <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-        <span class="poppins text-green-400">curious</span> to see my work?
+        <span class="poppins text-green-400">Interested</span> in checking out my
+        work?
       </h3>
     </div>
     <a
@@ -136,9 +144,8 @@
     <div
       class="flex flex-col gap-2 text-center relative before:absolute
   before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-green-700 after:absolute
-  after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-green-700 py-4"
+  after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-green-700 py-7"
     >
-      <h6 class="text-lg sm:text-xl md:text-2xl">Want to know more?</h6>
       <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
         A bit <span class="poppins text-green-400">about</span> me.
       </h3>
@@ -156,7 +163,7 @@
             0{index + 1}
           </p>
           <div class="flex flex-col gap-6 sm:gap-8">
-            <h3 class="text-2xl sm:text-3xl md:text-4xl">
+            <h3 class="text-2xl sm:text-3xl md:text-4xl poppins text-green-400">
               {benefit.name}
             </h3>
             <p>{benefit.description}</p>
