@@ -55,7 +55,7 @@
       </h2>
       <p class="text-base sm:text-lg md:text-xl">
         My <span class="poppins text-green-400">favourite languages</span> are
-        javascript, python and C! Graduating from MacEwan University in
+        javascript, python and C! I am Graduating from MacEwan University in
         <span class="poppins text-green-400">April 2024!</span>
       </p>
       <a
