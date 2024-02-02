@@ -10,7 +10,7 @@
     {
       name: "C Language Quiz",
       icon: "fa-solid fa-scroll",
-      href: "https://c-lang-quiz.netlify.app",
+      href: "https://github.com/JP5252/quiz-app",
     },
     {
       name: "Jump Queen",
