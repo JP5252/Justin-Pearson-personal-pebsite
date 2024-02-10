@@ -13,9 +13,9 @@
       href: "https://github.com/JP5252/Jump-Queen",
     },
     {
-      name: "C Language Quiz",
-      icon: "fa-solid fa-scroll",
-      href: "https://github.com/JP5252/quiz-app",
+      name: "task manager application",
+      icon: "fa-regular fa-calendar",
+      href: "https://github.com/JP5252/task_manager",
     },
   ];
 
@@ -127,10 +127,11 @@
       </Step>
       <Step step={steps[2]}>
         <p>
-          The C language quiz that will test your knowledge on the C programming
-          language, this was my <strong class="text-green-400"
-            >first React app!</strong
+          I built a task managing application using <strong
+            class="text-green-400">Flutter</strong
           >
+          and implementing a
+          <strong class="text-green-400">Firebase</strong> database.
         </p>
       </Step>
     </div>
