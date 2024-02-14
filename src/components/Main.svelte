@@ -41,11 +41,11 @@
 <main class="flex flex-col flex-1 p-4">
   <section
     id="introPage"
-    class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8
+    class="gap-10 py-8
 			sm:py-14"
   >
     <div
-      class="flex flex-col lg:justify-center text-center lg:text-left
+      class="flex flex-col lg:justify-center text-center
 					gap-6 md:gap-8 lg:gap-10"
     >
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
@@ -69,7 +69,7 @@
       </p>
 
       <a
-        class="greenshadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl
+        class="greenshadow mx-auto text-base sm:text-lg md:text-xl
       poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white
       text-slate-950"
         href="https://linkedin.com/in/justin-pearson5252"
@@ -81,14 +81,6 @@
         />
         <h4 class="relative z-9">Get in touch &rarr;</h4>
       </a>
-    </div>
-    <div class="relative grid place-items-center">
-      <img
-        src={"images/profile.png"}
-        alt="Profile"
-        class="object-cover
-		z-[2] max-h-[50vh]"
-      />
     </div>
   </section>
 
