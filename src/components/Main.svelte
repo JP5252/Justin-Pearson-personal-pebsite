@@ -12,11 +12,6 @@
       icon: "fa-solid fa-football",
       href: "https://github.com/JP5252/NFL-Data-Scraping",
     },
-    {
-      name: "task manager application",
-      icon: "fa-regular fa-calendar",
-      href: "https://github.com/JP5252/task_manager",
-    },
   ];
 
   let benefits = [
@@ -115,15 +110,6 @@
           nfl data so that I can get better projections for next years NFL
           season. This work in progress is going to help me win my
           <strong class="text-green-400">fantasy football</strong> leagues next year!
-        </p>
-      </Step>
-      <Step step={steps[2]}>
-        <p>
-          I built a task managing application using <strong
-            class="text-green-400">Flutter</strong
-          >
-          and implementing a
-          <strong class="text-green-400">Firebase</strong> database.
         </p>
       </Step>
     </div>
