@@ -3,14 +3,14 @@
 
   let steps = [
     {
-      name: "NFL Data Scraping",
-      icon: "fa-solid fa-football",
-      href: "https://github.com/JP5252/NFL-Data-Scraping",
-    },
-    {
       name: "Jump Queen",
       icon: "fa-solid fa-gamepad",
       href: "https://github.com/JP5252/Jump-Queen",
+    },
+    {
+      name: "NFL Data Scraping",
+      icon: "fa-solid fa-football",
+      href: "https://github.com/JP5252/NFL-Data-Scraping",
     },
     {
       name: "task manager application",
@@ -104,17 +104,17 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
-          I learned <strong class="text-green-400">web scraping</strong> to get
-          nfl data so that I can get better projections for next years NFL
-          season. This work in progress is going to help me win my
-          <strong class="text-green-400">fantasy football</strong> leagues next year!
+          <strong class="text-green-400">Jump Queen</strong> is a 2D game I am
+          currently working on in <strong class="text-green-400">Unity</strong> for
+          a class at school, taking inspiration from the game jump king!
         </p>
       </Step>
       <Step step={steps[1]}>
         <p>
-          <strong class="text-green-400">Jump Queen</strong> is a 2D game I am
-          currently working on in <strong class="text-green-400">Unity</strong> for
-          a class at school, taking inspiration from the game jump king!
+          I learned <strong class="text-green-400">web scraping</strong> to get
+          nfl data so that I can get better projections for next years NFL
+          season. This work in progress is going to help me win my
+          <strong class="text-green-400">fantasy football</strong> leagues next year!
         </p>
       </Step>
       <Step step={steps[2]}>
@@ -144,7 +144,7 @@
       </h3>
     </div>
     <p class="mx-auto poppins font-semiblod text-xl sm:text-2xl md:text-3xl">
-      I am...
+      A bit about me..
     </p>
     <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
       {#each benefits as benefit, index}
