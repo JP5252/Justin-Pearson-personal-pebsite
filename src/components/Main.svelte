@@ -96,7 +96,7 @@
       <i class="fa-brands fa-github"></i>
       <p>All Repositories</p>
     </a>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
           <strong class="text-green-400">Jump Queen</strong> is a 2D game I am
