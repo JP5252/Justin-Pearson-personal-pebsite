@@ -126,12 +126,9 @@
   after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-green-700 py-7"
     >
       <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-        A bit <span class="poppins text-green-400">about</span> me.
+        A bit <span class="poppins text-green-400">about</span> me..
       </h3>
     </div>
-    <p class="mx-auto poppins font-semiblod text-xl sm:text-2xl md:text-3xl">
-      A bit about me..
-    </p>
     <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
       {#each benefits as benefit, index}
         <div class="flex gap-6 sm:gap-8">
