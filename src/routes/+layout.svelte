@@ -8,7 +8,7 @@
   let innerWidth = 0;
 
   function goTop() {
-    document.body.scrollIntoView();
+    document.body.scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
@@ -17,10 +17,11 @@
 sm:text-base"
 >
   <div
-    class={"fixed bottom-0 w-full duration-200 flex p-10 z-[10] " +
-      (y > 0
-        ? " opacity-full pointer-events-auto"
-        : "  opacity-0 pointer-events-none")}
+    class={`fixed bottom-8 right-8 z-50 duration-200 ${
+      y <= 0
+        ? "opacity-0 pointer-events-none"
+        : "opacity-full pointer-events-auto"
+    }`}
   >
     <button
       on:click={goTop}
