@@ -8,6 +8,11 @@
       href: "https://github.com/JP5252/Jump-Queen",
     },
     {
+      name: "Edmonton Property Assessments App",
+      icon: "fa-solid fa-house",
+      href: "https://github.com/JP5252/Edmonton-Property-assessments-app",
+    },
+    {
       name: "NFL Data Scraping",
       icon: "fa-solid fa-football",
       href: "https://github.com/JP5252/NFL-Data-Scraping",
@@ -96,7 +101,7 @@
       <i class="fa-brands fa-github"></i>
       <p>All Repositories</p>
     </a>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
         <p>
           <strong class="text-green-400">Jump Queen</strong> is a 2D game I am
@@ -106,9 +111,17 @@
       </Step>
       <Step step={steps[1]}>
         <p>
-          I learned <strong class="text-green-400">web scraping</strong> to get
-          nfl data so that I can get better projections for next years NFL
-          season. This work in progress is going to help me win my
+          A <strong class="text-green-400">Java</strong> application that uses a
+          City of Edmonton API it get property assessment data and displays it in
+          an application interface where the data can be parsed using several different
+          search criteria.
+        </p>
+      </Step>
+      <Step step={steps[2]}>
+        <p>
+          I learned <strong class="text-green-400">web scraping</strong> using
+          Python to get nfl data so that I can get better projections for next
+          years NFL season. This work in progress is going to help me win my
           <strong class="text-green-400">fantasy football</strong> leagues next year!
         </p>
       </Step>
