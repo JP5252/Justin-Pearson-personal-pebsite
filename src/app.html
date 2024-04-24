@@ -1,224 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-		<link rel="icon" href="%sveltekit.assets%/JPlogo.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Justin Pearson</title>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-slate-950 text-white
-	relative">
-	<div class="absolute top-0 left-0 w-full h-full z-[-1]">
-		 <canvas class="absolute inset-0">
-			<style>
-			body {
-			background-color: #000;
-			background-image: radial-gradient(circle at top right, rgba(48, 41, 255, 0.13),       transparent),
-				radial-gradient(circle at 20% 80%, rgba(46, 171, 136, 0.234), transparent)
-			}
-			canvas {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			}
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="%sveltekit.assets%/JPlogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Justin Pearson</title>
+    %sveltekit.head%
+  </head>
+  <body
+    data-sveltekit-preload-data="hover"
+    class="bg-slate-950 text-white relative"
+  >
+    <div class="absolute top-0 left-0 w-full h-full z-[-1]">
+      <canvas class="absolute inset-0">
+        <style>
+          <!-- adapted from: https://codepen.io/hakimel/pen/bzrZGo-->
+          body {
+            background-color: #000;
+            background-image: radial-gradient(
+                circle at top right,
+                rgba(48, 41, 255, 0.13),
+                transparent
+              ),
+              radial-gradient(
+                circle at 20% 80%,
+                rgba(46, 171, 136, 0.234),
+                transparent
+              );
+          }
+          canvas {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+      </canvas>
+    </div>
+    <script>
+      const STAR_COLOR = "#fff";
+      const STAR_SIZE = 1.2;
+      const STAR_MIN_SCALE = 0.2;
+      const OVERFLOW_THRESHOLD = 20;
+      const STAR_COUNT = (window.innerWidth + window.innerHeight) / 20;
 
-			</style>
-		</canvas>
-		</div>
-		<script>
-		const STAR_COLOR = '#fff';
-		const STAR_SIZE = 1.2;
-		const STAR_MIN_SCALE = 0.2;
-		const OVERFLOW_THRESHOLD = 50;
-		const STAR_COUNT = ( window.innerWidth + window.innerHeight ) / 4;
+      const canvas = document.querySelector("canvas"),
+        context = canvas.getContext("2d");
 
-		const canvas = document.querySelector( 'canvas' ),
-			context = canvas.getContext( '2d' );
+      let scale = 1, // device pixel ratio
+        width,
+        height;
 
-		let scale = 1, // device pixel ratio
-			width,
-			height;
+      let stars = [];
 
-		let stars = [];
-		
-		let scrollY = 0;
+      let scrollY = 0;
 
-		let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
+      let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 
-		let touchInput = false;
+      let touchInput = false;
 
-		generate();
-		resize();
-		step();
+      generate();
+      resize();
+      step();
 
-		window.onresize = resize;
-		document.onscroll = onScroll;
+      window.onresize = resize;
+      document.onscroll = onScroll;
 
-		function generate() {
+      function generate() {
+        for (let i = 0; i < STAR_COUNT; i++) {
+          stars.push({
+            x: 0,
+            y: 0,
+            z: STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE),
+          });
+        }
+      }
 
-		for( let i = 0; i < STAR_COUNT; i++ ) {
-			stars.push({
-			x: 0,
-			y: 0,
-			z: STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE )
-			});
-		}
+      function placeStar(star) {
+        star.x = Math.random() * width;
+        star.y = Math.random() * height;
+      }
 
-		}
+      function recycleStar(star) {
+        let direction = "z";
 
-		function placeStar( star ) {
+        let vx = Math.abs(velocity.x),
+          vy = Math.abs(velocity.y);
 
-		star.x = Math.random() * width;
-		star.y = Math.random() * height;
+        if (vx > 1 || vy > 1) {
+          let axis;
 
-		}
+          if (vx > vy) {
+            axis = Math.random() < vx / (vx + vy) ? "h" : "v";
+          } else {
+            axis = Math.random() < vy / (vx + vy) ? "v" : "h";
+          }
 
-		function recycleStar( star ) {
+          if (axis === "h") {
+            direction = velocity.x > 0 ? "l" : "r";
+          } else {
+            direction = velocity.y > 0 ? "t" : "b";
+          }
+        }
 
-		let direction = 'z';
+        star.z = STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE);
 
-		let vx = Math.abs( velocity.x ),
-				vy = Math.abs( velocity.y );
+        if (direction === "z") {
+          star.z = 0.1;
+          star.x = Math.random() * width;
+          star.y = Math.random() * height;
+        } else if (direction === "l") {
+          star.x = -OVERFLOW_THRESHOLD;
+          star.y = height * Math.random();
+        } else if (direction === "r") {
+          star.x = width + OVERFLOW_THRESHOLD;
+          star.y = height * Math.random();
+        } else if (direction === "t") {
+          star.x = width * Math.random();
+          star.y = -OVERFLOW_THRESHOLD;
+        } else if (direction === "b") {
+          star.x = width * Math.random();
+          star.y = height + OVERFLOW_THRESHOLD;
+        }
+      }
 
-		if( vx > 1 || vy > 1 ) {
-			let axis;
+      function resize() {
+        scale = window.devicePixelRatio || 1;
 
-			if( vx > vy ) {
-			axis = Math.random() < vx / ( vx + vy ) ? 'h' : 'v';
-			}
-			else {
-			axis = Math.random() < vy / ( vx + vy ) ? 'v' : 'h';
-			}
+        width = window.innerWidth * scale;
+        height = window.innerHeight * scale;
 
-			if( axis === 'h' ) {
-			direction = velocity.x > 0 ? 'l' : 'r';
-			}
-			else {
-			direction = velocity.y > 0 ? 't' : 'b';
-			}
-		}
-		
-		star.z = STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE );
+        canvas.width = width;
+        canvas.height = height;
 
-		if( direction === 'z' ) {
-			star.z = 0.1;
-			star.x = Math.random() * width;
-			star.y = Math.random() * height;
-		}
-		else if( direction === 'l' ) {
-			star.x = -OVERFLOW_THRESHOLD;
-			star.y = height * Math.random();
-		}
-		else if( direction === 'r' ) {
-			star.x = width + OVERFLOW_THRESHOLD;
-			star.y = height * Math.random();
-		}
-		else if( direction === 't' ) {
-			star.x = width * Math.random();
-			star.y = -OVERFLOW_THRESHOLD;
-		}
-		else if( direction === 'b' ) {
-			star.x = width * Math.random();
-			star.y = height + OVERFLOW_THRESHOLD;
-		}
+        stars.forEach(placeStar);
+      }
 
-		}
+      function step() {
+        context.clearRect(0, 0, width, height);
 
-		function resize() {
+        update();
+        render();
 
-		scale = window.devicePixelRatio || 1;
+        requestAnimationFrame(step);
+      }
 
-		width = window.innerWidth * scale;
-		height = window.innerHeight * scale;
+      function update() {
+        velocity.tx *= 0.96;
+        velocity.ty *= 0.96;
 
-		canvas.width = width;
-		canvas.height = height;
+        velocity.x += (velocity.tx - velocity.x) * 0.8;
+        velocity.y += (velocity.ty - velocity.y) * 0.8;
 
-		stars.forEach( placeStar );
+        stars.forEach((star) => {
+          star.x += velocity.x * star.z;
+          star.y += velocity.y * star.z;
 
-		}
+          star.x += (star.x - width / 2) * velocity.z * star.z;
+          star.y += (star.y - height / 2) * velocity.z * star.z;
+          star.z += velocity.z;
 
-		function step() {
+          // recycle when out of bounds
+          if (
+            star.x < -OVERFLOW_THRESHOLD ||
+            star.x > width + OVERFLOW_THRESHOLD ||
+            star.y < -OVERFLOW_THRESHOLD ||
+            star.y > height + OVERFLOW_THRESHOLD
+          ) {
+            recycleStar(star);
+          }
+        });
+      }
 
-		context.clearRect( 0, 0, width, height );
+      function render() {
+        stars.forEach((star) => {
+          context.beginPath();
+          context.lineCap = "round";
+          context.lineWidth = STAR_SIZE * star.z * scale;
+          context.globalAlpha = 0.5 + 0.5 * Math.random();
+          context.strokeStyle = STAR_COLOR;
 
-		update();
-		render();
+          context.beginPath();
+          context.moveTo(star.x, star.y);
 
-		requestAnimationFrame( step );
+          var tailX = velocity.x * 2,
+            tailY = velocity.y * 2;
 
-		}
+          // stroke() wont work on an invisible line
+          if (Math.abs(tailX) < 0.1) tailX = 0.5;
+          if (Math.abs(tailY) < 0.1) tailY = 0.5;
 
-		function update() {
+          context.lineTo(star.x + tailX, star.y + tailY);
 
-		velocity.tx *= 0.96;
-		velocity.ty *= 0.96;
+          context.stroke();
+        });
+      }
 
-		velocity.x += ( velocity.tx - velocity.x ) * 0.8;
-		velocity.y += ( velocity.ty - velocity.y ) * 0.8;
+      function onScroll() {
+        const newScrollY = window.scrollY;
+        const scrollDelta = newScrollY - scrollY;
 
-		stars.forEach( ( star ) => {
-
-			star.x += velocity.x * star.z;
-			star.y += velocity.y * star.z;
-
-			star.x += ( star.x - width/2 ) * velocity.z * star.z;
-			star.y += ( star.y - height/2 ) * velocity.z * star.z;
-			star.z += velocity.z;
-		
-			// recycle when out of bounds
-			if( star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD ) {
-			recycleStar( star );
-			}
-
-		} );
-
-		}
-
-		function render() {
-
-		stars.forEach( ( star ) => {
-
-			context.beginPath();
-			context.lineCap = 'round';
-			context.lineWidth = STAR_SIZE * star.z * scale;
-			context.globalAlpha = 0.5 + 0.5*Math.random();
-			context.strokeStyle = STAR_COLOR;
-
-			context.beginPath();
-			context.moveTo( star.x, star.y );
-
-			var tailX = velocity.x * 2,
-				tailY = velocity.y * 2;
-
-			// stroke() wont work on an invisible line
-			if( Math.abs( tailX ) < 0.1 ) tailX = 0.5;
-			if( Math.abs( tailY ) < 0.1 ) tailY = 0.5;
-
-			context.lineTo( star.x + tailX, star.y + tailY );
-
-			context.stroke();
-
-		} );
-
-		}
-
-		function onScroll() {
-			const newScrollY = window.scrollY;
-			const scrollDelta = newScrollY - scrollY;
-
-			velocity.ty -= scrollDelta * 0.1; // Adjust the multiplier based on the scroll speed sensitivity
-			scrollY = newScrollY;
- 		}
-
-		</script>
-		<div style="display: contents" class="relative
-		z-[1]">%sveltekit.body%
-		</div>
-	</body>
+        velocity.ty -= scrollDelta * 0.1; // Adjust the multiplier based on the scroll speed sensitivity
+        scrollY = newScrollY;
+      }
+    </script>
+    <div style="display: contents" class="relative z-[1]">%sveltekit.body%</div>
+  </body>
 </html>

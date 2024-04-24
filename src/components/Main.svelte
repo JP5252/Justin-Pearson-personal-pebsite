@@ -8,14 +8,14 @@
       href: "https://github.com/JP5252/Jump-Queen",
     },
     {
-      name: "Edmonton Property Assessments App",
-      icon: "fa-solid fa-house",
-      href: "https://github.com/JP5252/Edmonton-Property-assessments-app",
+      name: "Movie Review App",
+      icon: "fa-solid fa-video",
+      href: "https://github.com/JP5252/movie-review-app",
     },
     {
-      name: "NFL Data Scraping",
+      name: "NFL Data Analysis",
       icon: "fa-solid fa-football",
-      href: "https://github.com/JP5252/NFL-Data-Scraping",
+      href: "https://github.com/JP5252/NFL-Data-Analysis",
     },
   ];
 
@@ -111,17 +111,17 @@
       </Step>
       <Step step={steps[1]}>
         <p>
-          A <strong class="text-green-400">Java</strong> application that uses a
-          City of Edmonton API it get property assessment data and displays it in
-          an application interface where the data can be parsed using several different
-          search criteria.
+          A <strong class="text-green-400">Vue.js</strong> application that implements
+          JWT for authentication and routing. The backend is a Django PostgreSQL
+          server.
         </p>
       </Step>
       <Step step={steps[2]}>
         <p>
-          I learned <strong class="text-green-400">web scraping</strong> using
-          Python to get nfl data so that I can get better projections for next
-          years NFL season. This work in progress is going to help me win my
+          I learned <strong class="text-green-400">Machine Learning</strong>
+          using Python with TensorFlow to get nfl data so that I can get better projections
+          for next years NFL season. This work in progress is going to help me win
+          my
           <strong class="text-green-400">fantasy football</strong> leagues next year!
         </p>
       </Step>
